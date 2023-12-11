@@ -3,7 +3,8 @@ import java.util.Arrays;
 class Solution {
     public int solution(int[] sides) {
         int answer = 0;
-        int s = 1001;
+        //int s = 1001;
+        int s = 0;
         int m = 0;
         int l = 0;
         
