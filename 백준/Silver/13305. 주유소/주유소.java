@@ -8,9 +8,6 @@ public class Main {
         int[] distance = new int[city-1];
         int[] cityMoney = new int[city];
 
-        int nowCityMoney = 0;
-        int buyOil = 0;
-
         for(int i=0; i<city-1; i++){
             distance[i] = sc.nextInt();
         }
@@ -19,13 +16,14 @@ public class Main {
             cityMoney[i] = sc.nextInt();
         }
 
-        nowCityMoney = cityMoney[0];
+        int nowCityMoney = cityMoney[0];
+        long buyOil = 0;
 
         for(int i=0; i<city-1; i++){
             if(cityMoney[i] < nowCityMoney){
                 nowCityMoney = cityMoney[i];
             }
-            buyOil += (nowCityMoney * distance[i]);
+            buyOil += (long)nowCityMoney * distance[i];
         }
 
         System.out.println(buyOil);
