@@ -11,27 +11,27 @@ public class Main {
             tanghulu[i] = sc.nextInt();
         }
 
-        int [] window = new int[10];
+        int [] fruitCountByType = new int[10];
         int fruitType = 0;
-        int windowLeft = 0;       
+        int left = 0;       
         int answer = 0;
 
-        for(int windowRight=0; windowRight<n; windowRight++){
-            if(window[tanghulu[windowRight]]==0){
+        for(int right=0; right<n; right++){
+            if(fruitCountByType[tanghulu[right]]==0){
                 fruitType += 1;
             }
-            window[tanghulu[windowRight]]++;
+            fruitCountByType[tanghulu[right]]++;
 
 
             while(fruitType >2){
-                window[tanghulu[windowLeft]]--;
-                if (window[tanghulu[windowLeft]] == 0) {
+                fruitCountByType[tanghulu[left]]--;
+                if (fruitCountByType[tanghulu[left]] == 0) {
                     fruitType--;
                 }
-                windowLeft++;
+                left++;
             }
             
-            answer = Math.max(answer, windowRight - windowLeft + 1);
+            answer = Math.max(answer, right - left + 1);
         }
         System.out.println(answer);
     }
